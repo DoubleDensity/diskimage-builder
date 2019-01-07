@@ -159,6 +159,7 @@ class Partitioning(PluginBase):
             # will be seen at becomes "/dev/mapper/loop0pX"
             logger.debug("self.device_path is: %s",
                          self.device_path)
+            print("self.device_path is: %s" % (self.device_path))
             assert self.device_path[:5] == "/dev/"
             device_name = "/dev/mapper/%sp%d" % (self.device_path[5:], pnum)
             self.state['blockdev'][p.get_name()] \
