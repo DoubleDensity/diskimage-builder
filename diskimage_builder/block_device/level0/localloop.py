@@ -41,7 +41,7 @@ def image_delete(filename):
 def loopdev_attach(filename):
     logger.info("loopdev attach")
     logger.debug("Calling [sudo losetup --show -f %s]", filename)
-    block_device = exec_sudo(["LOOPDEV_DEBUG=all", "losetup", "--show", "-f", filename])
+    block_device = exec_sudo(["losetup", "--show", "-f", filename])
     # [:-1]: Cut of the newline
     block_device = block_device[:-1]
     logger.info("New block device [%s]", block_device)
