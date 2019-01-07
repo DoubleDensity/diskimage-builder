@@ -177,6 +177,8 @@ class Partitioning(PluginBase):
     # create() calls in the partition nodes this plugin has
     # created are calling back into this.
     def create(self):
+        logger.debug("self: %s",
+                         self)
         # This is a bit of a hack.  Each of the partitions is actually
         # in the graph, so for every partition we get a create() call
         # as the walk happens.  But we only need to create the
